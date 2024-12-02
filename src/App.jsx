@@ -6,6 +6,45 @@ import styles from "./App.module.css";
 
 import "./global.css";
 
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: "https://github.com/hufeli.png",
+      name: "Hudson Fernando",
+      role: "CTO @Rocketseat",
+    },
+    content: [
+      { type: "paragraph", content: "Fala galeraa 👋" },
+      {
+        type: "paragraph",
+        content:
+          "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀",
+      },
+      { type: "link", content: "👉 jane.design/doctorcare" },
+    ],
+    publishedAt: new Date("2024/12/02 15:39:00"),
+  },
+  {
+    id: 1,
+    author: {
+      avatarUrl: "https://github.com/hufeli.png",
+      name: "Fulano de tal",
+      role: "Educator @Rocketseat",
+    },
+    content: [
+      { type: "paragraph", content: "Fala galeraa 👋" },
+      {
+        type: "paragraph",
+        content:
+          "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀",
+      },
+      { type: "link", content: "👉 jane.design/doctorcare" },
+    ],
+    publishedAt: new Date("2024/11/15 12:32:00"),
+  },
+];
+
 export const App = () => {
   return (
     <div>
@@ -14,15 +53,14 @@ export const App = () => {
         <Sidebar />
 
         <main>
-          <Post
-            author="Hudson Fernando"
-            content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet molestiae impedit officia vero odio, ex dignissimos, minus, quis molestias praesentium quod ut repellendus minima animi reprehenderit repellat cupiditate eos ab?"
-          />
-
-          <Post
-            author="Fulano de tal"
-            content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet molestiae impedit officia vero odio, ex dignissimos, minus, quis molestias praesentium quod ut repellendus minima animi reprehenderit repellat cupiditate eos ab?"
-          />
+          {posts.map((post, id) => (
+            <Post
+              key={id}
+              author={post.author}
+              content={post.content}
+              publishedAt={post.publishedAt}
+            />
+          ))}
         </main>
       </div>
     </div>

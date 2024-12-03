@@ -26,8 +26,9 @@ export const Post = ({ author, publishedAt, content }) => {
 
   const handleCreateNewComment = () => {
     event.preventDefault();
-
+    
     setComments([...comments, comment]);
+    setComment('')
   };
 
   return (

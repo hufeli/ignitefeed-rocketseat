@@ -1,4 +1,6 @@
-# Projeto IgniteDeed by RocketSeat
+# Projeto Ignite Feed by Rocketseat
 
-- pnpm create
+```code
+pnpm create
+```
 - pnpm run dev

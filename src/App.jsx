@@ -53,9 +53,9 @@ export const App = () => {
         <Sidebar />
 
         <main>
-          {posts.map((post, id) => (
+          {posts.map((post, index) => (
             <Post
-              key={id}
+              key={index}
               author={post.author}
               content={post.content}
               publishedAt={post.publishedAt}
